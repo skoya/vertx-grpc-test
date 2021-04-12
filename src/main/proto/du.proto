@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+option java_multiple_files = false;
+option java_package = "to.du.api";
+option java_outer_classname = "DuProto";
+
+package du;
+
+service Dus {
+  // Sends a greeting
+  rpc GetDues (DuRequest) returns (DuReply) {}
+}
+
+// The request message containing the user's name.
+message DuRequest {
+  string name = 1;
+}
+
+// The response message containing the greetings
+message DuReply {
+  repeated Du du = 1;
+}
+
+message Du {
+  string shortDesc = 1;
+  int32 date = 2;
+}
